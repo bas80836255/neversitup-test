@@ -1,7 +1,5 @@
 package manipulator
 
-import "fmt"
-
 type Manipulator struct {
 }
 
@@ -12,18 +10,13 @@ func (m *Manipulator) Shuffle(input string) []string {
 
 func (m *Manipulator) swap(input []rune, left, right int) []string {
 	var result []string
-	fmt.Println("left : ", left, " right: ", right, " input", string(input))
 	if left == right {
 		result = append(result, string(input))
 	} else {
-		fmt.Println("recursive")
 		for i := left; i <= right; i++ {
-			fmt.Println("input", string(input))
 			input[left], input[i] = input[i], input[left]
-			fmt.Println("before ", string(input))
 			result = append(result, m.swap(input, left+1, right)...)
 			input[left], input[i] = input[i], input[left]
-			fmt.Println("after ", string(input))
 		}
 	}
 	return result
