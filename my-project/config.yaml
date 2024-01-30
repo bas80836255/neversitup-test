@@ -1,0 +1,18 @@
+# default configuration, default to production
+config: &default
+  application:
+    name: user-api
+  server:
+    port: 8080
+
+# local environment config override
+local:
+  <<: *default
+
+# staging environment config override
+staging:
+  <<: *default
+
+# prod environment config override
+prod:
+  <<: *default

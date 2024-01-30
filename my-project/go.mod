@@ -1,9 +1,13 @@
-module neversitup-test
+module my-project
 
 go 1.20
 
 require (
+	github.com/caarlos0/env/v6 v6.9.2
+	github.com/golang/mock v1.6.0
+	github.com/gorilla/mux v1.8.1
 	github.com/stretchr/testify v1.8.4
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
