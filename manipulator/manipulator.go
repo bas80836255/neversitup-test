@@ -5,29 +5,6 @@ import "fmt"
 type Manipulator struct {
 }
 
-//func (m *Manipulator) Shuffle(input string) []string {
-//	var result []string
-//	m.swap([]rune(input), 0, len(input)-1, &result)
-//	return m.removeDuplicate(result)
-//}
-//
-//func (m *Manipulator) swap(input []rune, left, right int, result *[]string) {
-//	fmt.Println("left : ", left, " right: ", right, " input", string(input))
-//	if left == right {
-//		*result = append(*result, string(input))
-//	} else {
-//		fmt.Println("recursive")
-//		for i := left; i <= right; i++ {
-//			fmt.Println("input", string(input))
-//			input[left], input[i] = input[i], input[left]
-//			fmt.Println("before ", string(input))
-//			m.swap(input, left+1, right, result)
-//			input[left], input[i] = input[i], input[left]
-//			fmt.Println("after ", string(input))
-//		}
-//	}
-//}
-
 func (m *Manipulator) Shuffle(input string) []string {
 	result := m.swap([]rune(input), 0, len(input)-1)
 	return m.removeDuplicate(result)

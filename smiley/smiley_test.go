@@ -35,9 +35,17 @@ func (t *SmileyTest) TestOddNumber_Find_WhenGivenInputCase2_ThenReturnThree() {
 }
 
 // input [';]', ':[', ';*', ':$', ';-D']
-func (t *SmileyTest) TestOddNumber_Find_WhenGivenInputCase2_ThenReturnOne() {
+func (t *SmileyTest) TestOddNumber_Find_WhenGivenInputCase3_ThenReturnOne() {
 	input := []string{";]", ":[", ";*", ":$", ";-D"}
 	result := t.smiley.Count(input)
 
 	t.Equal(1, result)
+}
+
+// input []
+func (t *SmileyTest) TestOddNumber_Find_WhenGivenInputCase4_ThenReturnZero() {
+	var input []string
+	result := t.smiley.Count(input)
+
+	t.Equal(0, result)
 }
